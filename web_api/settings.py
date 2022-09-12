@@ -37,6 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'customers',
+    'employees',
+    'offices',
+    # 'orderdetailsinfo',
+    'orders',
+    'payments',
+    'productlines',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -73,10 +81,17 @@ WSGI_APPLICATION = 'web_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web_api',
+        'USER': 'root',
+        'PASSWORD': 'Opke1987.',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
