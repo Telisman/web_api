@@ -11,3 +11,4 @@ class Products(models.Model):
     quantityInStock= models.IntegerField(null=True)
     buyPrice= models.DecimalField(max_digits=10, decimal_places=2)
     MSRP= models.DecimalField(max_digits=10, decimal_places=2)
+

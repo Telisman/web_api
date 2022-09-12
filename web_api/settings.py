@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'customers',
     'employees',
     'offices',
-    # 'orderdetailsinfo',
+    'orderd_info',
     'orders',
     'payments',
     'productlines',
