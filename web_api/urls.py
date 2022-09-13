@@ -21,7 +21,6 @@ from offices.views import offices
 from orderd_info.views import orderd_info
 from orders.views import orders
 from payments.views import payments
-# from productlines.views import productlines
 from products.views import products
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +30,6 @@ urlpatterns = [
     path('orderdinfo/', include('orderd_info.urls')),
     path('orders/', include('orders.urls')),
     path('payments/', include('payments.urls')),
-    path('productlines/', include('productlines.urls')),
     path('products/', include('products.urls')),
 
     # API page(JSON)
@@ -42,7 +40,6 @@ urlpatterns = [
     path('orderd_infoAPI/', orderd_info),
     path('paymentsAPI/', payments),
     path('ordersAPI/', orders),
-    # path('productlinesAPI/', productlines),
     path('productsAPI/', products),
 \
 ]
