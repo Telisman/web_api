@@ -16,10 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from customers.views import customers
+from employees.views import employees
+from offices.views import offices
+from orderd_info.views import orderd_info
+from orders.views import orders
+from payments.views import payments
+# from productlines.views import productlines
+from products.views import products
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('customers/', include('customers.urls')),
-    path('customersAPI/', customers),
     path('employees/', include('employees.urls')),
     path('offices/', include('offices.urls')),
     path('orderdinfo/', include('orderd_info.urls')),
@@ -27,5 +33,16 @@ urlpatterns = [
     path('payments/', include('payments.urls')),
     path('productlines/', include('productlines.urls')),
     path('products/', include('products.urls')),
+
+    # API page(JSON)
     path('api-auth/', include('rest_framework.urls')),
+    path('customersAPI/', customers),
+    path('employeesAPI/', employees),
+    path('officesAPI/', offices),
+    path('orderd_infoAPI/', orderd_info),
+    path('paymentsAPI/', payments),
+    path('ordersAPI/', orders),
+    # path('productlinesAPI/', productlines),
+    path('productsAPI/', products),
+\
 ]
