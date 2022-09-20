@@ -1,0 +1,75 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/officestyle.css' %}">
+
+<!--<div><p>{{ office.officeCode }}</p><p>{{ office.city }}</p><p>{{ office.phone }}</p> <p>{{ office.addressLine1 }}</p>-->
+<!--    <p>{{ office.addressLine2 }}</p> <p>{{ office.state }}</p>-->
+<!--    <p>{{ office.country }}</p> <p>{{ office.postalCode }}</p>-->
+<!--    <p>{{ office.territory }}</p></div><br>-->
+
+
+<body>
+    <main class="main">
+
+        <section class="card-area">
+        {% for office in office %}
+
+            <!-- Card: City -->
+            <section class="card-section">
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--city">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve" class="card-front__icon">
+                               <g>
+
+                               </g>
+                               </svg>
+
+                               <h2 class="card-front__heading">
+                                {{ office.city }}
+                            </h2>
+                            <p class="card-front__text-price">
+                                {{ office.addressLine1 }}
+                            </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--city">
+                                        {{ office.phone }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <video class="video__container" autoplay muted loop>
+                                    <source class="video__media" src="https://player.vimeo.com/external/370331493.sd.mp4?s=e90dcaba73c19e0e36f03406b47bbd6992dd6c1c&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            <h3 class="inside-page__heading inside-page__heading--city">
+                                {{ office.addressLine2 }}
+                            </h3>
+                            <p class="inside-page__text">
+                                {{ office.state }}
+                            </p>
+                            <p class="inside-page__text">
+                               {{ office.country }}
+                            </p>
+                            <p class="inside-page__text">
+                               {{ office.postalCode }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+        </section>
+
+    </main>
+</body>
+
